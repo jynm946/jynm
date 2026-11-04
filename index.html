@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吕懿轩 · 全栈工程师 · 独立开发者</title>
+  <meta name="description" content="吕懿轩的个人主页：一名全栈工程师。记录关于代码、设计与日常的长期思考，以及被点亮的每一段足迹。">
+  <meta name="theme-color" content="#fbfcff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="吕懿轩 · 全栈工程师 · 独立开发者">
+  <meta property="og:description" content="在代码与设计之间，构建清晰、安静、有温度的数字体验。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23edf4ff'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%232563eb'/%3E%3Ccircle cx='17' cy='21' r='3' fill='%2389aaf5'/%3E%3Ccircle cx='47' cy='19' r='2.5' fill='%2389aaf5'/%3E%3Ccircle cx='48' cy='45' r='3' fill='%2389aaf5'/%3E%3Ccircle cx='18' cy='46' r='2' fill='%2389aaf5'/%3E%3Cpath d='M32 32 17 21M32 32 47 19M32 32 48 45M32 32 18 46' stroke='%2389aaf5' stroke-width='1.4' opacity='.7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('jiangxu-theme');
+        if (theme === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch (error) { /* 本地存储不可用时保持默认主题 */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a class="brand" href="#home" aria-label="江旭 · 回到首页" data-brand-link>
+        <span class="brand__mark" aria-hidden="true" data-brand-mark>旭</span>
+        <span class="brand__name" data-brand-name>江旭</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <span class="site-nav__indicator" aria-hidden="true"></span>
+        <a class="site-nav__link is-active" href="#home" data-nav="home" aria-current="page">首页</a>
+        <a class="site-nav__link" href="#blog" data-nav="blog">博客</a>
+        <a class="site-nav__link" href="#footprints" data-nav="footprints">足迹</a>
+        <a class="site-nav__link" href="#skills" data-nav="skills">技能</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="切换到深色模式">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7Z"></path>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+    <nav class="mobile-menu__nav" aria-label="移动端主导航">
+      <a href="#home" data-mobile-link><span>01</span>首页</a>
+      <a href="#blog" data-mobile-link><span>02</span>博客</a>
+      <a href="#footprints" data-mobile-link><span>03</span>足迹</a>
+      <a href="#skills" data-mobile-link><span>04</span>技能</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <p id="mobileMenuTagline">在代码与设计之间，构建有温度的数字体验。</p>
+      <a href="mailto:hello@jiangxu.design" id="mobileMenuEmail">hello@jiangxu.design</a>
+      <div class="mobile-menu__socials">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" id="mobileMenuGithub">代码仓库</a>
+        <button type="button" data-copy="jiangxu_design" id="mobileMenuWechat">复制微信</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="heroTitle" data-spa="home">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" id="heroGlow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="hero__eyebrow" id="heroEyebrow">
+          <span>开发者</span><i aria-hidden="true">·</i><span>构建者</span><i aria-hidden="true">·</i><span>探索者</span>
+        </p>
+        <h1 class="hero__title" id="heroTitle" aria-label="江旭">
+          <span class="hero__char"><span>江</span></span><span class="hero__char"><span>旭</span></span>
+        </h1>
+        <p class="hero__role" id="heroRole"><span></span>前端工程师 · 独立开发者<span></span></p>
+        <p class="hero__lead" id="heroLead">在代码与设计之间，构建清晰、安静、有温度的数字体验。</p>
+
+        <ul class="hero__tags" aria-label="个人标签" id="heroTags">
+          <li>前端工程师</li>
+          <li>终身学习者</li>
+          <li>开源探索者</li>
+        </ul>
+
+        <div class="hero__stats">
+          <a class="stat-card" href="#skills">
+            <span class="stat-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 6l-4 12"></path></svg>
+            </span>
+            <span class="stat-card__body">
+              <strong class="stat-card__value" id="statYearsValue" data-count="6" data-pad="2" data-suffix="+">00+</strong>
+              <span class="stat-card__label" id="statYearsLabel">年开发旅程</span>
+            </span>
+          </a>
+          <a class="stat-card" href="#blog">
+            <span class="stat-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"></path><path d="M9 9h7M9 13h7M9 17h4"></path></svg>
+            </span>
+            <span class="stat-card__body">
+              <strong class="stat-card__value" id="statPostsValue" data-count="9" data-pad="2">00</strong>
+              <span class="stat-card__label" id="statPostsLabel">篇技术随笔</span>
+            </span>
+          </a>
+          <a class="stat-card" href="#footprints">
+            <span class="stat-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 0 0-14 0c0 4.9 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+            </span>
+            <span class="stat-card__body">
+              <strong class="stat-card__value" id="statCitiesValue" data-count="12" data-pad="2">00</strong>
+              <span class="stat-card__label" id="statCitiesLabel">座点亮城市</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="hero__socials">
+          <a class="icon-button" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="打开代码仓库" data-tip="代码仓库" data-social="github">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"></path></svg>
+          </a>
+          <button class="icon-button" type="button" data-copy="hello@jiangxu.design" aria-label="复制邮箱" data-tip="复制邮箱" data-social="email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3.5 7 8.5 6 8.5-6"></path></svg>
+          </button>
+          <button class="icon-button" type="button" data-copy="jiangxu_design" aria-label="复制微信号" data-tip="复制微信" data-social="wechat">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 4C5.9 4 3 6.3 3 9.2c0 1.6.9 3 2.3 4l-.6 1.9 2.2-1.1c.8.2 1.6.4 2.5.4.2 0 .4 0 .6-.1-.1-.4-.2-.9-.2-1.3 0-2.9 2.8-5.2 6.3-5.2h.4C15.7 5.6 13 4 9.5 4Z"></path><path d="M21 13.4c0-2.3-2.3-4.2-5.2-4.2s-5.2 1.9-5.2 4.2 2.3 4.2 5.2 4.2c.7 0 1.4-.1 2-.3l1.8.9-.5-1.5c1.2-.8 1.9-1.9 1.9-3.3Z"></path></svg>
+          </button>
+          <a class="icon-button" href="#blog" aria-label="阅读博客" data-tip="阅读博客" data-social="blog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1.4" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#about" aria-label="继续向下浏览">
+        <span class="hero__scroll-text" id="heroScrollLabel">向下滚动</span>
+        <span class="hero__mouse" aria-hidden="true"><i></i></span>
+      </a>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="aboutTitle" data-spa="home">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow__index">00</span><span class="eyebrow__line"></span><span>关于我</span></p>
+        <div class="about__layout">
+          <div class="about__main">
+            <h2 class="about__statement" id="aboutTitle" data-reveal>
+              让复杂的事情<span class="mark">变得清晰</span>，<br>
+              让清晰的界面<span class="mark">保留温度</span>。
+            </h2>
+            <div class="about__copy" id="aboutCopy" data-reveal>
+              <p>我是江旭，一名常驻杭州的前端工程师。六年来，我在产品与工程的交界处工作：把设计稿还原成可用的界面，把性能指标变成真实的体感，也把一次次需求迭代成可以长期维护的代码。</p>
+              <p>写作、散步、拍照，是我理解世界的另外三种方式。这个站点，是我把三者放在一起的地方。它不急着证明什么，只想诚实地记录一个人如何与代码、城市和时间相处。</p>
+            </div>
+            <p class="about__signature" id="aboutSignature" data-reveal>江旭 <span>写于杭州 · 2026</span></p>
+          </div>
+
+          <aside class="now-card" data-reveal>
+            <div class="now-card__head">
+              <span class="panel-label" id="nowLabel">现在进行时</span>
+              <span class="now-card__status" id="nowStatus"><i aria-hidden="true"></i>在线</span>
+            </div>
+            <ul class="now-card__list" id="nowList">
+              <li><span>所在城市</span><strong>杭州 · 中国</strong></li>
+              <li><span>本地时间</span><strong id="localTime">--:--</strong></li>
+              <li><span>当前状态</span><strong>开放远程合作</strong></li>
+              <li><span>正在阅读</span><strong>《设计中的设计》</strong></li>
+              <li><span>最近更新</span><strong>给博客接入了评论</strong></li>
+            </ul>
+            <p class="now-card__foot" id="nowCoordinates">北纬 30.27° · 东经 120.15°</p>
+          </aside>
+        </div>
+
+        <div class="principles" id="principles">
+          <article class="principle" data-reveal>
+            <span class="principle__index">01</span>
+            <h3>克制</h3>
+            <p>先删去不需要的，再让留下来的更重要。</p>
+          </article>
+          <article class="principle" data-reveal>
+            <span class="principle__index">02</span>
+            <h3>可靠</h3>
+            <p>漂亮的界面，也要经得起真实世界的使用。</p>
+          </article>
+          <article class="principle" data-reveal>
+            <span class="principle__index">03</span>
+            <h3>好奇</h3>
+            <p>保持提问，保持对未知的轻微兴奋。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true" data-spa="home">
+      <div class="marquee__track" id="marqueeTrack">
+        <span>界面工程</span><i></i><span>交互设计</span><i></i><span>动效表达</span><i></i><span>设计系统</span><i></i><span>可访问性</span><i></i><span>性能优化</span><i></i><span>长期主义</span><i></i><span>界面工程</span><i></i><span>交互设计</span><i></i><span>动效表达</span><i></i><span>设计系统</span><i></i><span>可访问性</span><i></i><span>性能优化</span><i></i><span>长期主义</span><i></i>
+      </div>
+    </div>
+
+    <section class="section blog" id="blog" aria-labelledby="blogTitle" data-spa="blog">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow__index">01</span><span class="eyebrow__line"></span><span>博客</span></p>
+          <div class="section-head__main">
+            <h2 class="section-title" id="blogTitle" data-split>博客</h2>
+            <p class="section-head__aside" id="postAside">共 <strong id="postCount">9</strong> 篇 · 慢慢写，认真写</p>
+          </div>
+          <p class="section-desc" id="blogDescription">关于代码、设计与日常的长期记录。把想清楚的事写下来，也把没想清楚的事留在过程里。</p>
+        </header>
+
+        <div class="blog-toolbar">
+          <div class="filter-group" id="blogFilters" role="group" aria-label="按分类筛选文章"></div>
+          <p class="blog-toolbar__updated" id="blogUpdated">最近更新 · 2026 年 10 月 28 日</p>
+        </div>
+
+        <div class="post-list" id="postList"></div>
+
+        <div class="post-list__footer">
+          <button class="btn btn--ghost" id="loadMore" type="button">继续往下读</button>
+          <p class="post-list__status" id="postStatus" role="status" aria-live="polite"></p>
+        </div>
+        <noscript><p class="noscript">本站的文章列表与地图互动需要启用 JavaScript 才能浏览。</p></noscript>
+      </div>
+    </section>
+
+    <section class="section footprints" id="footprints" aria-labelledby="footprintsTitle" data-spa="footprints">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow__index">02</span><span class="eyebrow__line"></span><span>我的足迹</span></p>
+          <div class="section-head__main">
+            <h2 class="section-title" id="footprintsTitle" data-split>我的足迹</h2>
+            <p class="section-head__aside" id="footprintAside">点亮 <strong>12</strong> 个省份 · 抵达 <strong>12</strong> 座城市</p>
+          </div>
+          <p class="section-desc">地图上的每一个亮点，都是一次具体的抵达。点击省份，把走过的路重新点亮，也把某段记忆叫回来。</p>
+        </header>
+
+        <div class="footprint-layout">
+          <div class="map-card panel" data-reveal>
+            <div class="map-card__head">
+              <div>
+                <p class="panel-label" id="mapTitle">中国 · 足迹地图</p>
+                <p class="map-card__sub" id="mapSubtitle">每一次抵达，都会留下一个坐标</p>
+              </div>
+              <ul class="map-legend" aria-hidden="true">
+                <li><i class="map-dot map-dot--lit"></i><span id="legendLit">已点亮</span></li>
+                <li><i class="map-dot map-dot--idle"></i><span id="legendIdle">待探索</span></li>
+                <li><i class="map-dot map-dot--home"></i><span id="legendHome">常驻</span></li>
+              </ul>
+            </div>
+
+            <div class="map-stage" id="mapStage">
+              <svg class="china-map" id="chinaMap" role="group" aria-label="中国省级行政区足迹地图。使用 Tab 键浏览省份，按回车点亮或查看详情。"></svg>
+              <div class="map-inset" id="mapInset" aria-hidden="true"></div>
+              <div class="map-tooltip" id="mapTooltip" role="tooltip" aria-hidden="true"></div>
+              <div class="map-compass" aria-hidden="true">
+                <span>北</span>
+                <svg viewBox="0 0 28 42"><path d="M14 2v32M7 10l7-8 7 8"></path></svg>
+              </div>
+            </div>
+
+            <div class="map-card__foot">
+              <p class="map-card__hint">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"></rect><path d="M12 7v4"></path></svg>
+                <span id="mapHint">点击省份点亮或查看记忆，侧栏可单独熄灭</span>
+              </p>
+              <button class="link-button" id="resetMap" type="button">恢复默认足迹</button>
+            </div>
+          </div>
+
+          <aside class="footprint-panel">
+            <div class="overview-panel panel" data-reveal>
+              <div class="panel__head">
+                <span class="panel-label" id="overviewTitle">足迹概览</span>
+                <span class="panel__hint" id="litShare">12 / 34</span>
+              </div>
+              <div class="overview-grid">
+                <div><strong id="statProvince">12</strong><span id="overviewProvinceLabel">点亮省份</span></div>
+                <div><strong id="statCity">12</strong><span id="overviewCityLabel">抵达城市</span></div>
+                <div><strong id="statYear">6</strong><span id="overviewYearLabel">记录年份</span></div>
+              </div>
+              <div class="lit-meter" aria-hidden="true"><span id="litMeterBar"></span></div>
+            </div>
+
+            <div class="province-panel panel" id="provinceDetail" aria-live="polite" data-reveal></div>
+
+            <div class="chip-panel panel" data-reveal>
+              <div class="panel__head">
+                <span class="panel-label" id="chipTitle">已点亮</span>
+                <span class="panel__hint" id="chipHint">点击定位</span>
+              </div>
+              <div class="province-chips" id="provinceChips"></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="memory-section">
+          <div class="memory-section__head">
+            <p class="panel-label" id="memorySectionLabel">最近抵达</p>
+            <p id="memorySectionAside">三段被记住的路</p>
+          </div>
+          <div class="memory-grid" id="memoryGrid"></div>
+        </div>
+        <p class="map-disclaimer" id="mapDisclaimer">地图边界数据来自 DataV.GeoAtlas，仅用于个人足迹可视化示意。</p>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" aria-labelledby="skillsTitle" data-spa="skills">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow__index">03</span><span class="eyebrow__line"></span><span>专业技能</span></p>
+          <div class="section-head__main">
+            <h2 class="section-title" id="skillsTitle" data-split>专业技能</h2>
+            <p class="section-head__aside" id="skillsAside">技术栈 · 项目实践</p>
+          </div>
+          <p class="section-desc" id="skillsDescription">以 Vue3 与 Spring Boot 为主轴，把前端工程、后端接口和 AI 应用开发落到真实项目里。这里不给自己打分，只说明我具体用什么、做过什么。</p>
+        </header>
+
+        <div class="tech-grid" id="techGroups" data-reveal></div>
+
+        <section class="project-board" aria-labelledby="projectBoardTitle" data-reveal>
+          <div class="project-board__head">
+            <div>
+              <p class="panel-label" id="projectBoardLabel">项目实践</p>
+              <h3 id="projectBoardTitle">把技术栈放进真实项目里</h3>
+            </div>
+            <p id="projectBoardAside">从架构、权限到 AI 生成的全流程实践</p>
+          </div>
+          <div class="project-list" id="projectBoard"></div>
+        </section>
+
+        <div class="toolbox" id="toolbox" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="contact__panel">
+          <div class="contact__main">
+            <p class="eyebrow"><span class="eyebrow__index">04</span><span class="eyebrow__line"></span><span>联系</span></p>
+            <h2 class="contact__title" id="contactTitle" data-split>一起做点<br>有意思的事。</h2>
+            <p class="contact__desc" id="contactDescription">无论是产品合作、前端咨询，还是只想聊聊设计与代码，都欢迎写信给我。通常会在 24 小时内回复。</p>
+            <div class="contact__actions">
+              <button class="btn btn--primary" type="button" data-copy="hello@jiangxu.design" id="contactCopy">复制邮箱</button>
+            </div>
+          </div>
+
+          <aside class="contact-card">
+            <div class="contact-card__status" id="contactStatus"><i aria-hidden="true"></i><span>目前开放远程合作</span></div>
+            <div class="contact-card__identity">
+              <span class="contact-card__avatar" aria-hidden="true" data-avatar>旭</span>
+              <div>
+                <strong id="contactName">江旭</strong>
+                <span id="contactRole">前端工程师 · 杭州</span>
+              </div>
+            </div>
+            <ul class="contact-card__list">
+              <li><span id="contactEmailLabel">邮箱</span><a href="mailto:hello@jiangxu.design" id="contactEmail">hello@jiangxu.design</a></li>
+              <li><span id="contactGithubLabel">代码</span><a href="https://github.com/" target="_blank" rel="noopener noreferrer" id="contactGithub">代码仓库</a></li>
+              <li><span id="contactWechatLabel">微信</span><button type="button" data-copy="jiangxu_design" id="contactWechat">jiangxu_design</button></li>
+            </ul>
+            <p class="contact-card__quote" id="contactQuote">“好的合作，从一次坦诚的对话开始。”</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a class="brand" href="#home" aria-label="江旭 · 回到首页" data-brand-link>
+            <span class="brand__mark" aria-hidden="true" data-brand-mark>旭</span>
+            <span class="brand__name" data-brand-name>江旭</span>
+          </a>
+          <p id="footerBrandDescription">在代码与设计之间，寻找清晰与温度。</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="页脚导航">
+          <span id="footerBrowseLabel">浏览</span>
+          <a href="#home">首页</a>
+          <a href="#blog">博客</a>
+          <a href="#footprints">足迹</a>
+          <a href="#skills">技能</a>
+        </nav>
+        <div class="site-footer__elsewhere">
+          <span id="footerFindLabel">找到我</span>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">代码仓库</a>
+          <a href="mailto:hello@jiangxu.design">电子邮箱</a>
+          <button type="button" data-copy="jiangxu_design">复制微信</button>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p id="footerCopyright">© 2026 江旭 · 保留所有权利</p>
+        <a href="#" data-scroll-top id="footerTopLabel">回到顶部 ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+  <dialog class="reader" id="reader" aria-labelledby="readerTitle">
+    <div class="reader__shell">
+      <div class="reader__progress" aria-hidden="true"><span id="readerProgress"></span></div>
+      <header class="reader__bar">
+        <button class="reader__back" id="readerBack" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+          返回列表
+        </button>
+        <div class="reader__tools">
+          <span class="reader__hint">阅读模式</span>
+          <button class="reader__tool" id="copyPostLink" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l1.4-1.4a5 5 0 0 0-7-7.1L10.4 5.6"></path><path d="M14 11a5 5 0 0 0-7.1 0L5.5 12.4a5 5 0 0 0 7 7.1l1.1-1.1"></path></svg>
+            复制链接
+          </button>
+          <button class="reader__tool reader__close" id="readerClose" type="button" aria-label="关闭阅读器">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg>
+          </button>
+        </div>
+      </header>
+      <div class="reader__scroll" id="readerScroll">
+        <article class="reader__article">
+          <p class="reader__category" id="readerCategory"></p>
+          <h2 class="reader__title" id="readerTitle"></h2>
+          <p class="reader__excerpt" id="readerExcerpt"></p>
+          <div class="reader__meta" id="readerMeta"></div>
+          <div class="reader__cover" id="readerCover" aria-hidden="true"></div>
+          <div class="reader__body" id="readerBody"></div>
+          <footer class="reader__footer">
+            <div class="reader__signature">
+              <span class="contact-card__avatar" aria-hidden="true" data-avatar>旭</span>
+              <div><strong id="readerAuthor">江旭</strong><span id="readerSignature">写于杭州，仍在路上</span></div>
+            </div>
+            <div class="reader__tags" id="readerTags"></div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>
+    <span id="toastText"></span>
+  </div>
+
+  <script src="assets/data/content.js" defer></script>
+  <script src="assets/data/china-city-data.js" defer></script>
+  <script src="assets/js/china-map-data.js" defer></script>
+  <script src="assets/js/markdown.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
