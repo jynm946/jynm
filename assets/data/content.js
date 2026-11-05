@@ -3,8 +3,8 @@
 window.SITE_CONTENT = {
   "meta": {
     "siteName": "吕懿轩",
-    "updatedAt": "2026-11-04T16:52:01.660Z",
-    "revision": 1793811121660
+    "updatedAt": "2026-11-05T09:43:16.687Z",
+    "revision": 1793871796687
   },
   "nav": {
     "home": "首页",
@@ -87,9 +87,24 @@ window.SITE_CONTENT = {
     "asideAfter": "篇 · 慢慢写，认真写",
     "description": "关于代码、设计与日常的长期记录。把想清楚的事写下来，也把没想清楚的事留在过程里。",
     "categories": [
+      "学习",
       "设计"
     ],
     "posts": [
+      {
+        "id": "post-1793871632030",
+        "slug": "post-1793871632030",
+        "title": "spring 常用注解",
+        "category": "学习",
+        "date": "2026-11-05",
+        "tags": [],
+        "glyph": "文",
+        "art": "rain",
+        "markdown": "## @SpringBootApplication\n\n@SpringBootApplication 是 Spring Boot 应用的核心注解，通常用于标注主启动类。\n``` java\n@SpringBootApplication\npublic class SpringSecurityJwtGuideApplication {\n      public static void main(java.lang.String[] args) {\n        SpringApplication.run(SpringSecurityJwtGuideApplication.class, args);\n    }\n}\n```\n我们可以把 @SpringBootApplication看作是下面三个注解的组合：\n- @EnableAutoConfiguration：启用 Spring Boot 的自动配置机制。\n- @ComponentScan：扫描 @Component、@Service、@Repository、@Controller 等注解的类。\n- @Configuration：允许注册额外的 Spring Bean 或导入其他配置类。",
+        "dateLabel": "2026 年 11 月 5 日",
+        "excerpt": "@SpringBootApplication @SpringBootApplication 是 Spring Boot 应用的核心注解，通常用于标注主启动类。 我们可以把 @S…",
+        "read": 3
+      },
       {
         "id": "post-1793807786990-tolrw",
         "slug": "redis",
