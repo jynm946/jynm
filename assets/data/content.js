@@ -13,15 +13,15 @@ window.SITE_CONTENT = {
     "skills": "技能"
   },
   "routes": {
-    "home": "江旭 · 前端工程师与独立开发者",
-    "blog": "博客 · 江旭",
-    "footprints": "我的足迹 · 江旭",
-    "skills": "技能 · 江旭"
+    "home": "吕懿轩 · 前端工程师与独立开发者",
+    "blog": "博客 · 吕懿轩",
+    "footprints": "我的足迹 · 吕懿轩",
+    "skills": "技能 · 吕懿轩"
   },
   "profile": {
     "name": "吕懿轩",
     "brandMark": "",
-    "avatarChar": "旭",
+    "avatarChar": "吕",
     "role": "全栈工程师 · 独立开发者",
     "eyebrow": [
       "开发者",
