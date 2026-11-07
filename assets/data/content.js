@@ -3,8 +3,8 @@
 window.SITE_CONTENT = {
   "meta": {
     "siteName": "吕懿轩",
-    "updatedAt": "2026-11-05T09:52:31.734Z",
-    "revision": 1793872351734
+    "updatedAt": "2026-11-07T13:26:15.466Z",
+    "revision": 1794057975466
   },
   "nav": {
     "home": "首页",
@@ -295,7 +295,7 @@ window.SITE_CONTENT = {
       },
       {
         "adcode": 410000,
-        "visited": false,
+        "visited": true,
         "lastVisit": "",
         "note": "",
         "cities": [
@@ -508,6 +508,14 @@ window.SITE_CONTENT = {
         "date": "2025.09",
         "tag": "旅行",
         "note": "只逛了逛洱海和大理古城，风吹麦浪倒是有"
+      },
+      {
+        "city": "焦作",
+        "cityAdcode": 410800,
+        "province": "河南",
+        "date": "2005.08",
+        "tag": "故乡",
+        "note": "我出生在这里"
       }
     ]
   },
