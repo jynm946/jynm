@@ -1,5 +1,5 @@
 /* ==========================================================================
-   江旭 · 个人网站交互层
+   吕懿轩 · 个人网站交互层
    原生 JavaScript，按功能拆分为独立初始化函数，统一在 boot() 中按序启动。
    ========================================================================== */
 
@@ -232,10 +232,10 @@
      ------------------------------------------------------------------------ */
 
   var ROUTE_CONFIG = {
-    home: { title: '江旭 · 前端工程师与独立开发者' },
-    blog: { title: '博客 · 江旭' },
-    footprints: { title: '我的足迹 · 江旭' },
-    skills: { title: '技能 · 江旭' }
+    home: { title: '吕懿轩 · 前端工程师与独立开发者' },
+    blog: { title: '博客 · 吕懿轩' },
+    footprints: { title: '我的足迹 · 吕懿轩' },
+    skills: { title: '技能 · 吕懿轩' }
   };
 
   var routeState = {
@@ -1861,7 +1861,7 @@
     if (meta) {
       meta.innerHTML = '<span>' + escapeHTML(post.dateLabel) + '</span>' +
         '<span>' + post.read + ' 分钟阅读</span>' +
-        '<span>' + escapeHTML((SITE_CONTENT && SITE_CONTENT.profile && SITE_CONTENT.profile.name) || '江旭') + '</span>';
+        '<span>' + escapeHTML((SITE_CONTENT && SITE_CONTENT.profile && SITE_CONTENT.profile.name) || '吕懿轩') + '</span>';
     }
     if (cover) cover.innerHTML = renderArtwork(post.art);
     if (body) {
